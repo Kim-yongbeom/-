@@ -47,3 +47,12 @@ function catName(name) {
 내부함수가 외부함수의 변수에 접근 할 수 있다 
 ```
 ![캡처](https://user-images.githubusercontent.com/89058117/168408006-84bcde48-be70-4918-ac87-6f18330619d3.PNG)
+
+## margin, padding 차이
+- 각 요소간의 보더 간격을 margin , 보더와 요소와의 간격을 padding 이라고 한다.
+![캡처](https://user-images.githubusercontent.com/89058117/168428188-73c2f0e0-3578-4764-a73b-7c7baa0e1178.PNG)
+
+## GET, POST 차이
+- GET 은 클라이언트에서 서버로 어떠한 리소스로 부터 정보를 요청하기 위해 사용되는 메서드이다. 
+- POST는 클라이언트에서 서버로 리소스를 생성하거나 업데이트하기 위해 데이터를 보낼 때 사용 되는 메서드다.
+
