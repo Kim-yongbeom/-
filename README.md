@@ -109,7 +109,8 @@ HTTP에서 클라이언트의 상태 정보를 클라이언트의 PC에 저장�
 - 실제로 자바스크립트가 구동되는 환경인 웹 브라우저에는 여러 개의 Thread가 사용된다.
 - 결론
 ```
-자바스크립트는 Single Thread 프로그래밍 언어라 한 번에 하나씩 밖에 실행할 수 없지만, Web API, Callback Queue, Event Loop 덕분에 멀티 스레드처럼 동시성을 지니고 있다.
+자바스크립트는 Single Thread 프로그래밍 언어라 한 번에 하나씩 밖에 실행할 수 없지만, 
+Web API, Callback Queue, Event Loop 덕분에 멀티 스레드처럼 동시성을 지니고 있다.
 ```
 
 
