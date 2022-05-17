@@ -119,4 +119,16 @@ Web API, Callback Queue, Event Loop 덕분에 멀티 스레드처럼 동시성�
 - Web API의 ```setTimeout()```의 콜백함수가 태스크 큐에 들어가고, ```Promise```의 콜백함수가 마이크로태스크 큐에 들어간다.
 - 이벤트 루프는 마이크로태스크 큐의 모든 태스크들을 처리한 다음,태스크 큐의 태스크들을 처리한다. 따라서 ```Promise```의 콜백함수가 ```setTimeout()```의 콜백함수보다 먼저 처리된다.
 
+## 이벤트 버블링
+- 이벤트 버블링은 특정 화면 요소에서 이벤트가 발생했을 때 해당 이벤트가 더 상위의 화면 요소들로 전달되는 특성을 의미한다.
+- 버블링 방지하기 위해 event.stopPropagation() 사용
+```
+function logEvent(event) {
+	event.stopPropagation();
+}
+```
 
+## 이벤트 캡쳐
+- 이벤트 캡쳐는 이벤트 버블링과 반대 방향으로 진행되는 이벤트 전파 방식이다.
+- 이벤트 캡쳐를 사용하기 위해 addEventListener() API에서 옵션 객체에 capture: true를 넣어주면 된다.
+- 캡쳐도 event.stopPropagation()을 사용해서 멈출 수 있다.
