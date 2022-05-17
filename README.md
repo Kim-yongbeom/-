@@ -132,3 +132,57 @@ function logEvent(event) {
 - 이벤트 캡쳐는 이벤트 버블링과 반대 방향으로 진행되는 이벤트 전파 방식이다.
 - 이벤트 캡쳐를 사용하기 위해 addEventListener() API에서 옵션 객체에 capture: true를 넣어주면 된다.
 - 캡쳐도 event.stopPropagation()을 사용해서 멈출 수 있다.
+
+## 이터러블(iterable)
+- 이터러블은 자료를 반복할 수 있는 객체를 말한다.
+- 흔히 쓰는 배열 역시 이터러블 객체이다.
+- 이터레이터를 리턴하는 ```[Symbol.iterator]()```메서드를 가진 객체이다.
+- 배열의 경우 Array.prototype의 Symbol.iterator를 상속받기 때문에 이터러블이다.
+
+## 이터레이터(iterator)
+- {value: 값, done: true/false} 형태의 이터레이터 객체를 리턴하는 next() 메서드를 가진 객체이다.
+- next 메서드로 순환 할 수 있는 객체이다.
+- ```[Symbol.iterator]()```안에 정의 되어있다.
+```
+const arr = [1,2,3]; //arr는 그냥 평범한 배열
+const iter = arr[Symbol.iterator]();
+
+iter.next()
+//>{value:1,done: false}
+
+iter.next()
+//>{value:2, done: false},
+
+iter.next()
+//{value:3, done: false}
+
+iter.next()
+//{value: undefined, done: true}
+```
+
+## 이터러블 프로토콜과 이터레이터 프로토콜
+- 이터러블을 [for ...of], [전개 연산자], [비구조화] ..등, 이터러블이나 이터레이터 프로토콜을 따르는 연산자들과 함께 동작하도록 하는 약속된 규약을 의미한다. 그래서 이터러블이란 이터러블 규약을 따르는 객체이다.
+
+## 제너레이터
+- ES6에서 도입된 제너레이터 함수는 이터러블을 생성하는 함수이다.
+- 제너레이터 함수를 사용하면 이터레이션 프로토콜을 준수해 이터러블을 생성하는 방식보다 간편하게 이터러블을 구현할 수 있다.
+- 제너레이터 함수는 비동기 처리에 유용하게 사용된다.
+- 제너레이터 함수는 function* 키워드로 선언한다. 그리고 하나 이상의 yield 문을 포함한다.
+```
+// 제너레이터 함수 선언문
+function* genDecFunc() {
+  yield 1;
+}
+```
+
+## HTML이 렌더링 중에 Javascript가 실행되면 렌더링이 멈추는 이유?
+- 
+
+
+
+
+
+
+
+
+
