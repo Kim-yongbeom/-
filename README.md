@@ -49,7 +49,7 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management
 https://www.zerocho.com/category/JavaScript/post/5741d96d094da4986bc950a0
 ```
 
-## 스코프, 호이스팅과 스코프
+## 스코프, 스코프 체인, 호이스팅과 스코프
 
 ## 호이스팅
 - JavaScript에서 호이스팅(hoisting)이란, 
