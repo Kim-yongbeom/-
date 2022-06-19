@@ -14,6 +14,14 @@ C언어와 같은 언어는 소스 파일을 작성한 후, 해당 파일을 컴
 자바스크립트는 웹 브라우저에 포함된 자바스크립트 인터프리터가 소스 코드를 직접 해석하여 바로 실행해 줍니다.
 ```
 
+## 자바스크립트 원시값
+- 숫자, 문자열, 불리언, null, undefined 인 다섯가지 기본 타입
+
+## 자바스크립트 가비지 렉션
+```
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management
+```
+
 ## 변수 설정
 - var는 함수 스코프이다. 함수 스코프는 함수 내에서 선언된 변수만 지역 변수가 된다
 - let, const는 블록 스코프이다. 블록 스코프는 모든 코드 블록에서 선언된 변수는 코드 블록 내에서만 유효하며 외부에서는 접근할 수 없다.
@@ -62,7 +70,15 @@ function catName(name) {
 - POST는 클라이언트에서 서버로 리소스를 생성하거나 업데이트하기 위해 데이터를 보낼 때 사용 되는 메서드다.
 
 ## this
+```
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this
+```
 - 자바스크립트의 this는 해당 함수 호출 방식에 따라 this에 바인딩되는 객체가 달라진다.
+
+## Promise, async await
+```
+https://elvanov.com/2597
+```
 
 ## 브라우저 저장소 차이점 (LocalStorage, SessionStorage)
 ```
@@ -119,6 +135,9 @@ Web API, Callback Queue, Event Loop 덕분에 멀티 스레드처럼 동시성�
 ```
 
 ## 이벤트 루프
+```
+https://www.zerocho.com/category/Javascript/post/597f34bbb428530018e8e6e2
+```
 - 이벤트 루프란 자바스크립트 엔진이 아닌, 구동하는 환경(브라우저, 노드)에서 가지고 있는 장치이다. 콜 스택과 태스크 큐(= 콜백 큐)를 감시하며, 콜 스택이 비어있을 경우에 태스크 큐에서 태스크(=콜백함수)를 가져와 콜 스택에 넣어 실행시키는 기능을 한다.
 - 태스크 큐 말고도 마이크로태스크 큐가 존재하고 Promise의 동작 방식과 연관이 있다.
 - Web API의 ```setTimeout()```의 콜백함수가 태스크 큐에 들어가고, ```Promise```의 콜백함수가 마이크로태스크 큐에 들어간다.
@@ -181,7 +200,9 @@ function* genDecFunc() {
 ```
 
 ## HTML이 렌더링 중에 Javascript가 실행되면 렌더링이 멈추는 이유?
-- 
+```
+https://velog.io/@eojine94/JavaScript-%EC%8B%A4%ED%96%89%EB%90%98%EB%A9%B4-html-%ED%8C%8C%EC%8B%B1-%EC%A4%91%EB%8B%A8%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0
+```
 
 
 
