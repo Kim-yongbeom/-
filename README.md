@@ -3,6 +3,24 @@
 ## 브라우저 작동원리
 <img width="701" alt="스크린샷 2022-05-11 오전 12 03 40" src="https://user-images.githubusercontent.com/89058117/167660451-2f21e802-766a-4cc8-b2e6-67a64aa1ad1a.png">
 
+```
+https://falsy.me/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EC%9D%B4%ED%95%B4-1-reflow-repaint%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EC%95%8C%EC%95%84%EB%B4%85%EB%8B%88%EB%8B%A4/
+```
+
+## www.google.com을 치면 생기는 일
+```
+https://velog.io/@eassy/www.google.com%EC%9D%84-%EC%A3%BC%EC%86%8C%EC%B0%BD%EC%97%90%EC%84%9C-%EC%9E%85%EB%A0%A5%ED%95%98%EB%A9%B4-%EC%9D%BC%EC%96%B4%EB%82%98%EB%8A%94-%EC%9D%BC
+```
+
+## 프로세스와 쓰레드 차이
+```
+https://gmlwjd9405.github.io/2018/09/14/process-vs-thread.html
+```
+
+## 메모리 영역(힙, 스택 메모리 차이)
+```
+https://velog.io/@tonic523/%ED%9E%99-%EC%98%81%EC%97%AD-vs-%EC%8A%A4%ED%83%9D-%EC%98%81%EC%97%AD
+```
 
 ## 자바스크립트의 특징
 - 자바스크립트는 객체 기반의 스크립트 언어이다.
@@ -204,7 +222,10 @@ function* genDecFunc() {
 https://velog.io/@eojine94/JavaScript-%EC%8B%A4%ED%96%89%EB%90%98%EB%A9%B4-html-%ED%8C%8C%EC%8B%B1-%EC%A4%91%EB%8B%A8%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0
 ```
 
-
+## [HTML/CSS] display 속성 알아보기 (display:none과 visibility:hidden 차이)
+```
+https://mber.tistory.com/42
+```
 
 
 
