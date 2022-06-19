@@ -49,6 +49,8 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management
 https://www.zerocho.com/category/JavaScript/post/5741d96d094da4986bc950a0
 ```
 
+## 스코프, 호이스팅과 스코프
+
 ## 호이스팅
 - JavaScript에서 호이스팅(hoisting)이란, 
 - 인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것을 의미합니다.
