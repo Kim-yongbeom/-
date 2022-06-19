@@ -20,7 +20,7 @@ C언어와 같은 언어는 소스 파일을 작성한 후, 해당 파일을 컴
 
 ## 자바스크립트 실행 컨텍스트
 ```
-https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context
+https://www.zerocho.com/category/JavaScript/post/5741d96d094da4986bc950a0
 ```
 
 ## 호이스팅
