@@ -20,7 +20,12 @@ Repaint(그리기): Reflow가 발생하면 Repaint도 발생, 레이아웃에 �
 
 ## ```www.google.com```을 치면 생기는 일
 ```
-https://velog.io/@eassy/www.google.com%EC%9D%84-%EC%A3%BC%EC%86%8C%EC%B0%BD%EC%97%90%EC%84%9C-%EC%9E%85%EB%A0%A5%ED%95%98%EB%A9%B4-%EC%9D%BC%EC%96%B4%EB%82%98%EB%8A%94-%EC%9D%BC
+1. 웹 브라우저가 HTTP를 사용해 DNS에게 입력된 도메인 주소를 요청
+2. DNS기록에서 'www.google.com'에 매칭되는 IP주소 찾고 응답
+3. 웹 브라우저가 웹 서버에 IP주소를 이용해 index.html 문서 요청
+4. 브라우저의 요청을 받은 서버는 페이지의 로직이나 데이터베이스 연동을 위해 WAS(미들웨어 역할)에 요청을 한다.
+5. 작업 결과를 웹 서버로 전송
+6. 서버는 브라우저에 html문서 결과 응답 후 내용 출력
 ```
 
 ## 프로세스와 쓰레드 차이
@@ -29,8 +34,25 @@ https://gmlwjd9405.github.io/2018/09/14/process-vs-thread.html
 ```
 
 ## 메모리 영역(힙, 스택 메모리 차이)
+![캡처](https://user-images.githubusercontent.com/89058117/174586989-d0ab4988-aacf-426a-8e72-4742a3e7dcac.PNG)
+
+- 스택
 ```
-https://velog.io/@tonic523/%ED%9E%99-%EC%98%81%EC%97%AD-vs-%EC%8A%A4%ED%83%9D-%EC%98%81%EC%97%AD
+1. 정적 메모리 할당
+2. 함수의 호출과 함께 할당되며, 함수의 호출이 완료되면 소멸
+3. 메모리의 높은 주소에서 낮은 주소의 방향으로 할당
+
+장점: 매무빠른 액세스, 변수를 명시적으로 할당 해제 할 필요가 없다.
+단점: 메모리 크기 제한, 지역 변수만
+```
+- 힙
+```
+1. 동적 메모리 할당
+2. 사용자에 의해 메모리 공간이 동적으로 할당되고 해제
+3. 메모리의 낮은 주소에서 높은 주소의 방향으로 할당
+
+장점: 변수는 전역적으로 액세스 할 수 있다. 메모리 크기 제한이 없다.
+단점: 상대적으로 느린 액세스, 메모리를 관리해야 한다.
 ```
 
 ## 자바스크립트의 특징
@@ -46,11 +68,6 @@ C언어와 같은 언어는 소스 파일을 작성한 후, 해당 파일을 컴
 ## 자바스크립트 원시값
 - 숫자, 문자열, 불리언, null, undefined 인 다섯가지 기본 타입
 
-## 자바스크립트 가비지 렉션
-```
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management
-```
-
 ## 변수 설정
 - var는 함수 스코프이다. 함수 스코프는 함수 내에서 선언된 변수만 지역 변수가 된다
 - let, const는 블록 스코프이다. 블록 스코프는 모든 코드 블록에서 선언된 변수는 코드 블록 내에서만 유효하며 외부에서는 접근할 수 없다.
@@ -58,9 +75,18 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management
 ## 자바스크립트 실행 컨텍스트
 ```
 https://www.zerocho.com/category/JavaScript/post/5741d96d094da4986bc950a0
+
+먼저 전역 컨텍스트 하나 생성 후, 함수 호출 시마다 컨텍스트가 생깁니다. 컨텍스트 생성 시 컨텍스트 안에 
+변수객체[arguments(함수의 인자), variable(해당 스코프의 변수들)], scope chain(자신과 상위 스코프들의 변수객체), this가 생성됩니다.
+컨텍스트 생성 후 함수가 실행되는데, 사용되는 변수들은 변수 객체 안에서 값을 찾고, 없다면 스코프 체인을 따라 올라가며 찾습니다.
+함수 실행이 마무리되면 해당 컨텍스트는 사라집니다.(클로저 제외) 페이지가 종료되면 전역 컨텍스트가 사라집니다.
 ```
 
-## 스코프, 스코프 체인, 호이스팅과 스코프
+## 스코프, 스코프 체인, 렉시컬 스코프
+- 전역 스코프: 코드 어디서든지 참조할 수 있다.
+- 지역 스코프: 함수 코드 블록이 만든 스코프로 함수 자신과 하위 함수에서만 참조할 수 있다.
+- 스코프 체인: 내부 함수는 외부 함수의 변수에 접근 가능해 변수를 찾기 위해 계속 상위 함수로 올라간다. 계속 범위를 넓히면서 찾는것.
+- 렉시컬 스코프(정적 스코프): 자바스크립트는 렉시컬 스코프를 따르고, 함수를 어디서 호출하는지가 아니라 어디에 선언하였는지에 따라 결정된다. 호출x, 선언o 
 
 ## 호이스팅
 - JavaScript에서 호이스팅(hoisting)이란, 
@@ -101,10 +127,60 @@ function catName(name) {
 - POST는 클라이언트에서 서버로 리소스를 생성하거나 업데이트하기 위해 데이터를 보낼 때 사용 되는 메서드다.
 
 ## this
-```
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this
-```
 - 자바스크립트의 this는 해당 함수 호출 방식에 따라 this에 바인딩되는 객체가 달라진다.
+- this는 기본적으로 window이다.
+- strict 모드에서는 undefined
+```
+var obj = {
+  a: function() { console.log(this); },
+};
+obj.a(); // obj
+```
+- 객체 메서드 a 안의 this는 객체를 가리킨다.
+```
+var a2 = obj.a;
+a2(); // window
+```
+- 호출하는 함수가 객체의 메서드인지 그냥 함수인지가 중요하다. 
+- a2는 obj.a를 꺼내온 것이기 때문에 더 이상 obj의 메서드가 아니다.
+```
+var obj2 = { c: 'd' };
+function b() {
+  console.log(this);
+}
+b(); // Window
+b.bind(obj2).call(); // obj2
+b.call(obj2); // obj2 
+b.apply(obj2); // obj2
+```
+- 명시적으로 this를 바꾸는 함수 메서드 bind, call, apply를 사용하면 this가 객체를 가리킨다.
+```
+$('div').on('click', function() {
+  console.log(this);
+});
+```
+- this는 클릭한 div이다. 이런건 어쩔 수 없이 외워야함
+```
+$('div').on('click', function() {
+  console.log(this); // <div>
+  function inner() {
+    console.log('inner', this); // inner Window
+  }
+  inner();
+});
+```
+- inner 함수 호출 시 this는 window이다.
+```
+$('div').on('click', function() {
+  console.log(this); // <div>
+  const inner = () => {
+    console.log('inner', this); // inner <div>
+  }
+  inner();
+});
+```
+- 해결하기 위해 ES6부터는 화살표 함수를 사용해 window 대신 상위 함수의 this를 가져온다.
+- this는 객체 메서드, bind, call, apply, new 일 때 바뀐다.
 
 ## Promise, async await
 ```
