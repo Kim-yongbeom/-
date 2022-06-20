@@ -4,7 +4,18 @@
 <img width="701" alt="스크린샷 2022-05-11 오전 12 03 40" src="https://user-images.githubusercontent.com/89058117/167660451-2f21e802-766a-4cc8-b2e6-67a64aa1ad1a.png">
 
 ```
-https://falsy.me/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EC%9D%B4%ED%95%B4-1-reflow-repaint%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EC%95%8C%EC%95%84%EB%B4%85%EB%8B%88%EB%8B%A4/
+'DOM트리'와 '스타일 규칙'을 합쳐서 '렌더 트리'를 만든다.
+'렌더 트리'는 DOM 요소를 기반으로 만들어지지만 완전히 대응하는 구조로 만들어 지지는 않는다.
+
+'DOM트리'가 문서의 구조를 나타낸다면 '렌더 트리'는 문서의 시각적 구조를 나타낸다.
+display: none 일 때 DOM에는 물론 존재하지만, 시각적으로는 없는 것이기 때문에 '렌더 트리'에는 할당되지 않는다.
+
+float 또는 position 값이 absolute, fixed 일 때 DOM 문서의 순서과 상관없이 시각적으로 위치하는 요소의 경우는
+'DOM트리'와 다른 위치의 '렌더 트리'에 할당한다.
+
+Reflow(배치): 최초에 한번 실행이 되고, 이후에 요소들의 레이아웃에 변화가 생기면 다시 '렌더 트리'를 구성하는 것을 Reflow라고 한다.
+
+Repaint(그리기): Reflow가 발생하면 Repaint도 발생, 레이아웃에 영향을 주지 않는 엘리먼트 변화(color, background-color)에서는 Reflow가 발생하지 않고 Repaint만 발생한다.
 ```
 
 ## ```www.google.com```을 치면 생기는 일
