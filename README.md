@@ -193,10 +193,15 @@ $('div').on('click', function() {
 - 해결하기 위해 ES6부터는 화살표 함수를 사용해 window 대신 상위 함수의 this를 가져온다.
 - this는 객체 메서드, bind, call, apply, new 일 때 바뀐다.
 
+## 콜백 함수
+- 다른 함수의 인자로써 이용되는 함수.
+- 어떤 이벤트에 의해 호출되어지는 함수.
+
 ## Promise, async await
-```
-https://elvanov.com/2597
-```
+- Promise: 비동기 작업의 단위
+- Promise의 예외처리: .catch()
+- async await: Promise를 좀 더 편하게 사용하게 해줌
+- async await의 예외처리: try & catch
 
 ## 브라우저 저장소 차이점 (LocalStorage, SessionStorage)
 ```
