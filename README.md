@@ -218,6 +218,7 @@ $('div').on('click', function() {
 - Promise의 예외처리: .catch()
 - async await: Promise를 좀 더 편하게 사용하게 해줌
 - async await의 예외처리: try & catch
+- await은 Promise가 처리될 때 까지 기다리게해줌
 
 ## 브라우저 저장소 차이점 (LocalStorage, SessionStorage)
 ```
