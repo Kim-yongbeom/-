@@ -1,6 +1,8 @@
 # 프론트엔드 기술
 
 ## ```www.google.com```을 치면 생기는 일
+![캡처](https://user-images.githubusercontent.com/89058117/174774721-b6162823-8a18-45fd-a2a2-1babcbf6fb5c.PNG)
+
 ```
 1. 웹 브라우저가 HTTP를 사용해 DNS에게 입력된 도메인 주소를 요청
 2. DNS기록에서 'www.google.com'에 매칭되는 IP주소 찾고 응답
