@@ -361,6 +361,9 @@ function* genDecFunc() {
 }
 ```
 
+## CORS
+- 브라우저에서 보안적인 이유로 HTTP요청들을 제한한다.
+
 ## [HTML/CSS] display 속성 알아보기 (display:none과 visibility:hidden 차이)
 - display:none은 화면 상 어떤 영역을 차지하지 않고 완전히 삭제된 것처럼 보이게 한다.
 - visibility: hidden은 해당 요소가 보이지 않을 뿐 요소가 존재하는 영역은 확실히 보이게 된다.
