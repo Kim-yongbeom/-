@@ -363,6 +363,7 @@ function* genDecFunc() {
 
 ## CORS
 - 브라우저에서 보안적인 이유로 HTTP요청들을 제한한다.
+- 지정된 도메인 외부에 있는 자원에 대한 접근을 통제하는 브라우저 메커니즘
 
 ## [HTML/CSS] display 속성 알아보기 (display:none과 visibility:hidden 차이)
 - display:none은 화면 상 어떤 영역을 차지하지 않고 완전히 삭제된 것처럼 보이게 한다.
