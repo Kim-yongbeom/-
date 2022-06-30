@@ -232,6 +232,45 @@ $('div').on('click', function() {
 - 해결하기 위해 ES6부터는 화살표 함수를 사용해 window 대신 상위 함수의 this를 가져온다.
 - this는 객체 메서드, bind, call, apply, new 일 때 바뀐다.
 
+## map 메서드
+- map() 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다.
+```
+const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+```
+
+## slice 메서드
+- slice() 메서드는 어떤 배열의 begin부터 end까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환합니다. 원본 배열은 바뀌지 않습니다.
+```
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+```
+
+## 얕은 복사
+```
+const obj1 = { a: 1, b: 2};
+const obj2 = obj1;
+console.log( obj1 === obj2 ); // true
+```
+- 위의 예시처럼 객체를 직접 대입하는 경우 참조에 의한 할당이 이루어지므로 둘은 같은 데이터(주소)를 가지고 있다. 이것이 얕은 복사이다.
+
+## 깊은 복사
+```
+const obj1 = { a:1, b:2 };
+const obj2 = { ...obj };
+obj2.a = 100;
+console.log( obj1 === obj2 ) // false
+console.log( obj1.a ) // 1
+```
+- ...(spread) 연산자를 통해 { }안에 obj1의 속성을 복사하여 obj2에 할당하였다. obj1과 obj2는 다른 주소를 갖게되었다. (그러나 딱, 1 depth 까지만)
+
 ## 콜백 함수
 - 다른 함수의 인자로써 이용되는 함수.
 - 어떤 이벤트에 의해 호출되어지는 함수.
