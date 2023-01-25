@@ -28,6 +28,8 @@ float 또는 position 값이 absolute, fixed 일 때 DOM 문서의 순서과 상
 Reflow(배치): 최초에 한번 실행이 되고, 이후에 요소들의 레이아웃에 변화가 생기면 다시 '렌더 트리'를 구성하는 것을 Reflow라고 한다.
 
 Repaint(그리기): Reflow가 발생하면 Repaint도 발생, 레이아웃에 영향을 주지 않는 엘리먼트 변화(color, background-color)에서는 Reflow가 발생하지 않고 Repaint만 발생한다.
+
+Reflow, Repaint를 줄여서 랜더링 최적화 시키는 법: https://seokzin.tistory.com/entry/JavaScript-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%B5%9C%EC%A0%81%ED%99%94-Reflow%EC%99%80-Repaint
 ```
 
 ## HTML이 렌더링 중에 Javascript가 실행되면 렌더링이 멈추는 이유?
