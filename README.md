@@ -402,6 +402,7 @@ function logEvent(event) {
 - 캡쳐도 event.stopPropagation()을 사용해서 멈출 수 있다.
 
 ## 이터러블(iterable)
+- 출처: https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%94-%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%F0%9F%92%AF%EC%99%84%EB%B2%BD-%EC%9D%B4%ED%95%B4
 - 이터러블은 자료를 반복할 수 있는 객체를 말한다.
 - 흔히 쓰는 배열 역시 이터러블 객체이다.
 - 이터레이터를 리턴하는 ```[Symbol.iterator]()```메서드를 가진 객체이다.
